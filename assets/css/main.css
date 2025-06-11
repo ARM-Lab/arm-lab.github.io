@@ -3327,6 +3327,14 @@ input, select, textarea {
 	height: 60px;
 }
 
+/* Ensure all carousel images are the same size without cropping */
+.carousel .image.featured img {
+	width: 100%;
+	height: 630px; /* Adjust this if needed */
+	object-fit: contain;
+	background-color: #f0f0f0; /* Optional, for consistent appearance */
+	display: block;
+}
 
 
 /* Define the button style
