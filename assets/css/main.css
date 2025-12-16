@@ -3365,6 +3365,34 @@ input, select, textarea {
 
   }
 
+/* Footer logo + text vedľa seba */
+.contact .footer-brand{
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact .footer-logo{
+  width: 200px;
+  height: auto;
+}
+
+.contact .footer-text{
+  text-align: left;
+}
+
+.contact .footer-text h2,
+.contact .footer-text h4{
+  margin: 0;
+}
+
+.contact .footer-text h4{
+  margin-top: 8px;
+}
+
+
+
+
 /* #text-box {
 	display: block;
 	overflow: hidden;
