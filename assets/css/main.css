@@ -150,6 +150,9 @@ input, select, textarea {
 		color:#004c99ff;
 		text-align: center;
 	}
+	.center-text {
+		text-align: center;
+	}
 
 	strong, b {
 		font-weight: 400;
