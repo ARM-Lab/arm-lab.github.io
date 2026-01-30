@@ -150,6 +150,10 @@ input, select, textarea {
 		color:#004c99ff;
 		text-align: center;
 	}
+	.center-img {
+		display: block;
+		margin: 0 auto;
+	}
 	.center-text {
 		text-align: center;
 	}
