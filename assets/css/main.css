@@ -154,6 +154,11 @@ input, select, textarea {
 		display: block;
 		margin: 0 auto;
 	}
+	.center-video {
+		display: block;
+		margin: 0 auto;
+	}
+
 	.center-text {
 		text-align: center;
 	}

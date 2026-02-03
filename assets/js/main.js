@@ -214,4 +214,48 @@
 
 		});
 
+		// Autoplay videos on scroll (IntersectionObserver)
+	$(function () {
+	const videos = document.querySelectorAll("video.autoplay-on-scroll");
+
+	if (!videos.length) return;
+
+	// Fallback pre staré prehliadače
+	if (!("IntersectionObserver" in window)) {
+		videos.forEach(v => {
+		v.muted = true;
+		v.play().catch(() => {});
+		});
+		return;
+	}
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+		entries.forEach(entry => {
+			const v = entry.target;
+
+			if (entry.isIntersecting) {
+			// Autoplay pravidlá: musí byť muted
+			v.muted = true;
+
+			// Skús prehrať
+			const p = v.play();
+			if (p && typeof p.catch === "function") {
+				p.catch(() => {
+				// Prehliadač autoplay blokoval (napr. user ešte neinteragoval)
+				// nič nerobíme, aby to nevyhadzovalo chyby
+				});
+			}
+			} else {
+			v.pause();
+			}
+		});
+		},
+		{ threshold: 0.6 } // 60% videa musí byť viditeľných
+	);
+
+	videos.forEach(v => observer.observe(v));
+	});
+
+
 })(jQuery);
